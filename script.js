@@ -15,7 +15,7 @@ const etp = document.getElementById("resultado")
 
 function obtenerInformacion() {
     $.ajax({
-        url: "http://132.226.243.22:8080/api/Audience/all",
+        url: "http://144.22.228.0:8080/api/Audience/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -58,7 +58,7 @@ function guardarInformacion() {
         contentType: "application/json; charset=utf-8",
         datatype: "JSON",
         data: JSON.stringify(myData),
-        url: "http://132.226.243.22:8080/api/Audience/save",
+        url: "http://144.22.228.0:8080/api/Audience/save",
         success: function (response) {
             console.log(response);
             console.log("Se guardo correctamente");
@@ -93,7 +93,7 @@ function editarInformacion(idElemento) {
         contentType: "application/json; charset=utf-8",
         datatype: "JSON",
         data: JSON.stringify(myData),
-        url: "http://132.226.243.22:8080/api/Audience/update",
+        url: "http://144.22.228.0:8080/api/Audience/update",
         success: function (response) {
             console.log(response);
             console.log("Se actualizo correctamente");
@@ -120,7 +120,7 @@ function borrarElemento(idElemento) {
         contentType: "application/json; charset=utf-8",
         datatype: "JSON",
         data: JSON.stringify(myData),
-        url: "http://132.226.243.22/api/Audience/delete",
+        url: "http://144.22.228.0:8080/api/Audience/delete",
         success: function (response) {
             console.log(response);
             console.log("Se elimino correctamente");
@@ -143,7 +143,7 @@ function borrarElemento(idElemento) {
  */
 function obtenerInformacionCliente() {
     $.ajax({
-        url: "http://132.226.243.22:8080/api/Client/all",
+        url: "http://144.22.228.0:8080/api/Client/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -187,7 +187,7 @@ function guardarInformacionCliente() {
         contentType: "application/json; charset=utf-8",
         datatype: "JSON",
         data: JSON.stringify(myData),
-        url: "http://132.226.243.22:8080/api/Client/save",
+        url: "http://144.22.228.0:8080/api/Client/save",
         success: function (response) {
             console.log(response);
             console.log("Se guardo correctamente");
@@ -217,7 +217,7 @@ function editarInformacionCliente(idElemento) {
         contentType: "application/json; charset=utf-8",
         datatype: "JSON",
         data: JSON.stringify(myData),
-        url: "http://132.226.243.22:8080/api/Client/update",
+        url: "http://144.22.228.0:8080/api/Client/update",
         success: function (response) {
             console.log(response);
             console.log("Se actualizo correctamente");
@@ -244,7 +244,7 @@ function borrarElementoCliente(idElemento) {
         contentType: "application/json; charset=utf-8",
         datatype: "JSON",
         data: JSON.stringify(myData),
-        url: "http://132.226.243.22:8080/api/Client/delete",
+        url: "http://144.22.228.0:8080/api/Client/delete",
         success: function (response) {
             console.log(response);
             console.log("Se elimino correctamente");
@@ -267,7 +267,7 @@ function borrarElementoCliente(idElemento) {
  */
 function obtenerInformacionMensaje() {
     $.ajax({
-        url: "http://132.226.243.22:8080/api/Message/all",
+        url: "http://144.22.228.0:8080/api/Message/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -304,7 +304,7 @@ function guardarInformacionMensaje() {
         contentType: "application/json; charset=utf-8",
         datatype: "JSON",
         data: JSON.stringify(myData),
-        url: "http://132.226.243.22:8080/api/Message/save",
+        url: "http://144.22.228.0:8080/api/Message/save",
         success: function (response) {
             console.log(response);
             console.log("Se guardo correctamente");
@@ -334,7 +334,7 @@ function editarInformacionMensaje(idElemento) {
         contentType: "application/json; charset=utf-8",
         datatype: "JSON",
         data: JSON.stringify(myData),
-        url: "http://132.226.243.22:8080/api/Message/update",
+        url: "http://144.22.228.0:8080/api/Message/update",
         success: function (response) {
             console.log(response);
             console.log("Se actualizo correctamente");
@@ -359,7 +359,7 @@ function borrarElementoMensaje(idElemento) {
         contentType: "application/json; charset=utf-8",
         datatype: "JSON",
         data: JSON.stringify(myData),
-        url: "http://132.226.243.22:8080/api/Message/delete",
+        url: "http://144.22.228.0:8080/api/Message/delete",
         success: function (response) {
             console.log(response);
             console.log("Se elimino correctamente");
@@ -377,7 +377,7 @@ function borrarElementoMensaje(idElemento) {
  */
 function obtenerInformacionCategoria() {
     $.ajax({
-        url: "http://132.226.243.22:8080/api/Category/all",
+        url: "http://144.22.228.0:8080/api/Category/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -416,7 +416,7 @@ function guardarInformacionCategoria() {
         contentType: "application/json; charset=utf-8",
         datatype: "JSON",
         data: JSON.stringify(myData),
-        url: "http://132.226.243.22:8080/api/Category/save",
+        url: "http://144.22.228.0:8080/api/Category/save",
         success: function (response) {
             console.log(response);
             console.log("Se guardo correctamente");
@@ -446,7 +446,7 @@ function editarInformacionCategoria(idElemento) {
         contentType: "application/json; charset=utf-8",
         datatype: "JSON",
         data: JSON.stringify(myData),
-        url: "http://132.226.243.22:8080/api/Category/update",
+        url: "http://144.22.228.0:8080/api/Category/update",
         success: function (response) {
             console.log(response);
             console.log("Se actualizo correctamente");
@@ -471,7 +471,7 @@ function borrarElementoCategoria(idElemento) {
         contentType: "application/json; charset=utf-8",
         datatype: "JSON",
         data: JSON.stringify(myData),
-        url: "http://132.226.243.22:8080/api/Category/delete",
+        url: "http://144.22.228.0:8080/api/Category/delete",
         success: function (response) {
             console.log(response);
             console.log("Se elimino correctamente");
@@ -489,7 +489,7 @@ function borrarElementoCategoria(idElemento) {
  */
 function obtenerInformacionReservacion() {
     $.ajax({
-        url: "http://132.226.243.22:8080/api/Reservation/all",
+        url: "http://144.22.228.0:8080/api/Reservation/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -529,7 +529,7 @@ function guardarInformacionReservacion() {
         contentType: "application/json; charset=utf-8",
         datatype: "JSON",
         data: JSON.stringify(myData),
-        url: "http://132.226.243.22:8080/api/Reservation/save",
+        url: "http://144.22.228.0:8080/api/Reservation/save",
         success: function (response) {
             console.log(response);
             console.log("Se guardo correctamente");
@@ -559,7 +559,7 @@ function editarInformacionReservacion(idElemento) {
         contentType: "application/json; charset=utf-8",
         datatype: "JSON",
         data: JSON.stringify(myData),
-        url: "http://132.226.243.22:8080/api/Reservation/update",
+        url: "http://144.22.228.0:8080/api/Reservation/update",
         success: function (response) {
             console.log(response);
             console.log("Se actualizo correctamente");
@@ -584,7 +584,7 @@ function borrarElementoReservacion(idElemento) {
         contentType: "application/json; charset=utf-8",
         datatype: "JSON",
         data: JSON.stringify(myData),
-        url: "http://132.226.243.22:8080/api/Reservation/delete",
+        url: "http://144.22.228.0:8080/api/Reservation/delete",
         success: function (response) {
             console.log(response);
             console.log("Se elimino correctamente");
