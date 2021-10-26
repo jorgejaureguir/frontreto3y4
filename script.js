@@ -602,7 +602,7 @@ function borrarElementoReservacion(idElemento) {
  */
  function obtenerInformacionAdmin() {
     $.ajax({
-        url: "http://144.22.228.0:8080/api/admin/all",
+        url: "http://144.22.228.0:8080/api/Admin/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -729,7 +729,7 @@ function borrarElementoAdmin(idElemento) {
 /**
  * funcion mostrar score
  */
- function mostrarRespuestaAdmin(respuesta) {
+ function mostrarRespuestaScore(respuesta) {
     let myTable = "<table border='1'><tr><th>Score<th>MessageScore</th>";
     for (i = 0; i < respuesta.length; i++) {
         myTable += "<tr>";
@@ -774,7 +774,7 @@ function guardarInformacionScore() {
 /**
  * peticion PUT de la api score
  */
-function editarInformacionAdmin(idElemento) {
+function editarInformacionScore(idElemento) {
     let myData = {
         idScore: idElemento, 
         score: $("#score").val(),
