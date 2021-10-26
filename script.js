@@ -597,3 +597,237 @@ function borrarElementoReservacion(idElemento) {
         }
     });
 }
+/**
+ * peticion GET de la api administrador
+ */
+ function obtenerInformacionAdmin() {
+    $.ajax({
+        url: "http://144.22.228.0:8080/api/admin/all",
+        type: "GET",
+        datatype: "JSON",
+        success: function (respuesta) {
+            console.log(respuesta);
+            mostrarRespuestaAdmin(respuesta)
+        }
+    });
+}
+/**
+ * funcion mostrar administrador
+ */
+ function mostrarRespuestaAdmin(respuesta) {
+    let myTable = "<table border='1'><tr><th>Name<th>Email<th>Password</th>";
+    for (i = 0; i < respuesta.length; i++) {
+        myTable += "<tr>";
+        myTable += "<td>" + respuesta[i].name + "</td>";
+        myTable += "<td>" + respuesta[i].email + "</td>";
+        myTable += "<td>" + respuesta[i].password + "</td>";
+        myTable += "<td> <button onclick='editarInformacionAdmin(" + respuesta[i].id + ")'>Actualizar</button>";
+        myTable += "<td> <button onclick='borrarElementoAdmin(" + respuesta[i].id + ")'>Borrar</button>";
+        myTable += "</tr>";
+    }
+    myTable += "</table>";
+    $("#resultadoA").html(myTable);
+}
+/**
+ * peticion POST de la api administrador
+ */
+function guardarInformacionAdmin() {
+    let myData = {
+        name: $("#name").val(),
+        email: $("#email").val(),
+        password: $("#password").val(),
+    };
+    console.log(myData)
+    $.ajax({
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        datatype: "JSON",
+        data: JSON.stringify(myData),
+        url: "http://144.22.228.0:8080/api/Admin/save",
+        success: function (response) {
+            console.log(response);
+            console.log("Se guardo correctamente");
+            alert("Se guardo correctamente");
+            window.location.reload()
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+              window.location.reload()
+            alert("No se guardo correctamente");
+    
+    
+        }
+    });
+}
+/**
+ * peticion PUT de la api adminitrador
+ */
+function editarInformacionAdmin(idElemento) {
+    let myData = {
+        id: idElemento, 
+        name: $("#name").val(),
+        email: $("#email").val(),
+        password: $("#password").val(),
+    }
+    console.log(myData);
+    $.ajax({
+        type: "PUT",
+        contentType: "application/json; charset=utf-8",
+        datatype: "JSON",
+        data: JSON.stringify(myData),
+        url: "http://144.22.228.0:8080/api/Admin/update",
+        success: function (response) {
+            console.log(response);
+            console.log("Se actualizo correctamente");
+            alert("Se actualizo correctamente");
+            window.location.reload()
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            window.location.reload()
+            alert("No se actualizo correctamente");
+        }
+    });
+}
+/**
+ * peticion DELETE de la api administrador
+ */
+function borrarElementoAdmin(idElemento) {
+    let myData = {
+        id: idElemento
+    };
+    $.ajax({
+        type: "DELETE",
+        contentType: "application/json; charset=utf-8",
+        datatype: "JSON",
+        data: JSON.stringify(myData),
+        url: "http://144.22.228.0:8080/api/Admin/delete",
+        success: function (response) {
+            console.log(response);
+            console.log("Se elimino correctamente");
+            alert("Se elimino correctamente");
+            window.location.reload()
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            window.location.reload()
+            alert("No se elimino correctamente");
+        }
+    });
+}
+/**
+ * peticion GET de la api score
+ */
+ function obtenerInformacionScore() {
+    $.ajax({
+        url: "http://144.22.228.0:8080/api/Score/all",
+        type: "GET",
+        datatype: "JSON",
+        success: function (respuesta) {
+            console.log(respuesta);
+            mostrarRespuestaScore(respuesta)
+        }
+    });
+}
+/**
+ * funcion mostrar score
+ */
+ function mostrarRespuestaAdmin(respuesta) {
+    let myTable = "<table border='1'><tr><th>Score<th>MessageScore</th>";
+    for (i = 0; i < respuesta.length; i++) {
+        myTable += "<tr>";
+        myTable += "<td>" + respuesta[i].score + "</td>";
+        myTable += "<td>" + respuesta[i].messageScore + "</td>";
+        myTable += "<td> <button onclick='editarInformacionScore(" + respuesta[i].idScore + ")'>Actualizar</button>";
+        myTable += "<td> <button onclick='borrarElementoScore(" + respuesta[i].idScore + ")'>Borrar</button>";
+        myTable += "</tr>";
+    }
+    myTable += "</table>";
+    $("#resultadoS").html(myTable);
+}
+/**
+ * peticion POST de la api score
+ */
+function guardarInformacionScore() {
+    let myData = {
+        score: $("#score").val(),
+        messageScore: $("#messageScore").val(),
+    };
+    console.log(myData)
+    $.ajax({
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        datatype: "JSON",
+        data: JSON.stringify(myData),
+        url: "http://144.22.228.0:8080/api/Score/save",
+        success: function (response) {
+            console.log(response);
+            console.log("Se guardo correctamente");
+            alert("Se guardo correctamente");
+            window.location.reload()
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+              window.location.reload()
+            alert("No se guardo correctamente");
+    
+    
+        }
+    });
+}
+/**
+ * peticion PUT de la api score
+ */
+function editarInformacionAdmin(idElemento) {
+    let myData = {
+        idScore: idElemento, 
+        score: $("#score").val(),
+        messageScore: $("#messageScore").val(),
+    }
+    console.log(myData);
+    $.ajax({
+        type: "PUT",
+        contentType: "application/json; charset=utf-8",
+        datatype: "JSON",
+        data: JSON.stringify(myData),
+        url: "http://144.22.228.0:8080/api/Score/update",
+        success: function (response) {
+            console.log(response);
+            console.log("Se actualizo correctamente");
+            alert("Se actualizo correctamente");
+            window.location.reload()
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            window.location.reload()
+            alert("No se actualizo correctamente");
+        }
+    });
+}
+/**
+ * peticion DELETE de la api score
+ */
+function borrarElementoScore(idElemento) {
+    let myData = {
+        idScore: idElemento
+    };
+    $.ajax({
+        type: "DELETE",
+        contentType: "application/json; charset=utf-8",
+        datatype: "JSON",
+        data: JSON.stringify(myData),
+        url: "http://144.22.228.0:8080/api/Score/delete",
+        success: function (response) {
+            console.log(response);
+            console.log("Se elimino correctamente");
+            alert("Se elimino correctamente");
+            window.location.reload()
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            window.location.reload()
+            alert("No se elimino correctamente");
+        }
+    });
+}
+function validarCampo(campo) {
+    if (campo.val() != "")
+        return true
+    else
+        return false;
+
+}

@@ -12,20 +12,18 @@
 <body>
     <form>
         <div style="text-align: center;">
-            <h2>Auditorio</h2>
-            <input type="text" id="owner" placeholder="Ingresar owner" required><br>
-            <input type="number" id="capacity" placeholder="Ingresar capacity"><br>
-            <input type="text" id="name" placeholder="Ingresar name"><br>
-            <input type="text" id="description" placeholder="Ingresar description"><br><br>
+            <h2>Score</h2>
+            <input type="number" id="score" placeholder="score" required><br>
+            <input type="number" id="messageScore" placeholder="messageScore"><br><br>
         </div>
     </form>
     <div style="text-align: center;">
-        <button onclick="obtenerInformacion()"> Consultar </button>
-        <button onclick="guardarInformacion()"> Guardar </button>
+        <button onclick="obtenerInformacionScore()"> Consultar </button>
+        <button onclick="guardarInformacionScore()"> Guardar </button>
 
         <a href="index.html">Volver</a><br><br>
     </div>
-    <div id="resultado"></div>
+    <div id="resultadoS"></div>
     <script src="script.js"></script>
 
 </body>
